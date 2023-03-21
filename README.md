@@ -52,9 +52,3 @@ Retrieving the files from the database, we dont have to store the files locally 
 - Reports can be exported as PDF 
 - Login and authentication for security purposes
 - Can add new category if company expands product range 
-
----
-
-## Contributors
-
-- [Yusra Tahir](https://github.com/yusra-tahir)
