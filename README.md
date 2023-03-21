@@ -1,7 +1,5 @@
 # WYWM-Capstone - Inventory Management System
 
-## Description
-
 A small retail business that sells a variety of products are experiencing issues with managing their inventory and keeping track of what products are in stock, what needs to be reordered, and how much has been sold. As a result, I have developed an inventory management system to help the business better manage the inventory and sales data.
 
 ### The Scope: 
