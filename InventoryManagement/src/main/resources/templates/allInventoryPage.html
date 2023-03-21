@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://kit.fontawesome.com/592efcffa0.js"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+	integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+	integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+	crossorigin="anonymous"></script>
+
+<title>Inventory Management System</title>
+<link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-md navbar-light">
+		<div class="container-md d-flex">
+			<a class="navbar-brand" href="/">APERTURE</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#collapsibleNavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse justify-content-end"
+				id="collapsibleNavbar">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="/new-inventory">
+							Add </a></li>
+					<li class="nav-item"><a class="nav-link active"
+						href="/inventory"> View Inventory</a></li>
+					<li class="nav-item"><a class="nav-link" href="/delete-item">
+							Delete </a></li>
+				</ul>
+			</div>
+		</div>
+
+	</nav>
+
+	<section class="intro">
+		<div class="container hero">
+			<hr class=mt-0>
+			<div class="bg-image h-100">
+				<div class="mask d-flex align-items-center h-100">
+					<div class="container">
+						<div class="row justify-content-center">
+							<div class="col-12">
+								<div class="card">
+									<div class="card-body p-0">
+										<div class="table-responsive table-scroll"
+											data-mdb-perfect-scrollbar="true"
+											style="position: relative; height: 700px">
+
+											<h3 th:text="${message}"></h3>
+											<form action="./filterByCategory">
+
+
+												<div class="form-group" style="float: left">
+													<label for="category"></label> <select class="form-control"
+														name="category">
+														<option value="">Sort By Category</option>
+														<option value="Clothing">Clothing</option>
+														<option value="Footwear">Footwear</option>
+														<option value="Accessories">Accessories</option>
+														<option value="Electronics">Electronics</option>
+														<option value="Sports & Fitness">Sports & Fitness</option>
+														<option value="Kitchenware">Kitchenware</option>
+														<option value="Beauty & Personal Care">Beauty &
+															Personal Care</option>
+
+													</select> <br> <input type=submit class="btn-nav">
+
+												</div>
+
+												<div style="float: right; padding-top: 1.5rem;">
+													<a class="btn btn-warning btn-sm"
+														th:href="@{'/salesReport/'}"> Generate Sales Report</a> <br>
+													<br> <a class="btn btn-warning btn-sm"
+														th:href="@{'/inventoryReport/'}"> Generate Inventory
+														Report</a>
+												</div>
+
+
+											</form>
+
+											<table class="table table-striped mb-0">
+												<thead>
+													<tr>
+														<th>SKU</th>
+														<th>Category</th>
+														<th>Description</th>
+														<th>Stock</th>
+														<th>Stock Sold</th>
+														<th>Price (£)</th>
+														<th>Cost (£)</th>
+													</tr>
+
+												</thead>
+												<tbody>
+													<tr th:each="inventoryList: ${inventoryList}">
+														<td th:text="${inventoryList.itemId}"></td>
+														<td th:text="${inventoryList.category}"></td>
+														<td th:text="${inventoryList.itemDescription}"></td>
+														<td th:text="${inventoryList.quantity}"></td>
+														<td th:text="${inventoryList.quantitySold}"></td>
+														<td th:text="${inventoryList.price}"></td>
+														<td th:text="${inventoryList.cost}"></td>
+														<td><a
+															th:href="@{'/update/' + ${inventoryList.itemId}}"
+															type="button" class="btn btn-info btn-sm"> <i
+																class="fas fa-pen"></i>
+														</a>
+														<td>
+														<td><a
+															th:href="@{'/delete/' + ${inventoryList.itemId}}"
+															type="button" class="btn btn-danger btn-sm"> <i
+																class="fas fa-times"></i>
+														</a>
+														<td>
+														<td><a class="btn btn-warning btn-sm"
+															th:href="@{'/salesReport/' + ${inventoryList.itemId}}">
+																View Sales </a></td>
+														<td><a class="btn btn-warning btn-sm"
+															th:href="@{'/inventoryReport/' + ${inventoryList.itemId}}">View
+																Inventory</a></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+</html>

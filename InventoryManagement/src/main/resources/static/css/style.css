@@ -1,0 +1,279 @@
+@import
+	url('https://fonts.googleapis.com/css2?family=Antic+Didone&family=Lato&family=Montserrat:wght@600&family=Poppins:wght@400;700&family=Raleway:wght@400;700&family=Roboto:wght@400;700&family=Source+Sans+Pro:wght@400;700&family=Vollkorn&display=swap')
+	;
+
+body {
+	background-color: #FFFAF5;
+}
+
+/*Navbar styling */
+a {
+	text-decoration: none;
+	color: white;
+}
+
+a:hover {
+	text-decoration: none;
+	color: white;
+}
+
+.nav-item, .nav-item a {
+	margin: 10px 15px;;
+	font-size: 20px;
+	font-family: 'Raleway', sans-serif;
+	color: #000958;
+}
+
+.navbar-brand {
+	font-size: 25px;
+	color: #000958;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 400;
+}
+/*End of navbar styling */
+
+/* START OF LANDING PAGE STYLING */
+.btn-nav {
+	display: inline-block;
+	outline: none;
+	cursor: pointer;
+	font-size: 14px;
+	line-height: 0;
+	border-radius: 500px;
+	transition-property: background-color, border-color, color, box-shadow,
+		filter;
+	transition-duration: .3s;
+	border: 1px solid transparent;
+	letter-spacing: 2px;
+	min-width: 120px;
+	text-transform: uppercase;
+	white-space: normal;
+	font-weight: 700;
+	text-align: center;
+	color: #fff;
+	background-color: #15883e;
+	height: 30px;
+}
+
+h3.output {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+}
+
+.form-group-inven {
+	float: left;
+}
+
+#report {
+	padding-top: 1.5rem;
+	float: right;
+}
+
+.btn-nav.add {
+	height: 40px;
+	width: 95%;
+}
+
+.btn-nav.delete {
+	height: 40px;
+	width: 50%;
+}
+
+.btn-nav:hover {
+	background-color: #1db954;
+}
+
+.form-centre {
+	width: 50%;
+}
+/* TABLE STYLING */
+.intro {
+	height: 100%;
+}
+
+.right-hand {
+	float: right;
+}
+
+table td, table th {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.card {
+	border-radius: .5rem;
+}
+
+.table-scroll {
+	border-radius: .5rem;
+}
+
+.table-scroll table thead th {
+	font-size: 1.12rem;
+}
+
+thead {
+	top: 0;
+	position: sticky;
+}
+
+/* IMAGE STYLING */
+#shopping-img {
+	transform: scaleX(-1);
+}
+
+/* END OF LANDING PAGE STYLING */
+hr {
+	border-top: 1px solid #000;
+}
+
+h1, h2, h3, h4 {
+	font-family: 'Raleway', sans-serif;
+	color: #000958;
+	font-weight: 700;
+}
+
+p {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 20px;
+}
+
+.brand-name {
+	color: #000958;
+	font-weight: 700;
+}
+
+.hero img {
+	object-position: center; /* Center the image within the element */
+	width: 75%;
+	margin-bottom: 1rem;
+}
+
+.button-box {
+	text-align: left;
+	margin-top: 20px;
+}
+
+/* Start of card styling for about page */
+.card-img {
+	height: 200px;
+	width: auto;
+}
+
+.card {
+	background-color: #FFF6ED;
+	border: none
+}
+/* End of card styling for about page */
+
+/* STYLING FOR LOGIN */
+.login-block {
+	background: #FFF6ED;
+	float: left;
+	width: 100%;
+	padding: 50px 0;
+}
+
+.banner-sec {
+	background: url(https://static.pexels.com/photos/33972/pexels-photo.jpg)
+		no-repeat left bottom;
+	background-size: cover;
+	min-height: 500px;
+	border-radius: 0 10px 10px 0;
+	padding: 0;
+}
+
+#login-container {
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 15px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-inner {
+	border-radius: 0 10px 10px 0;
+}
+
+.carousel-caption {
+	text-align: left;
+	left: 5%;
+}
+
+.login-sec {
+	padding: 50px 30px;
+	position: relative;
+}
+
+* /
+.banner-text {
+	width: 70%;
+	position: absolute;
+	bottom: 40px;
+	padding-left: 20px;
+}
+
+.banner-text h2 {
+	color: #fff;
+	font-weight: 600;
+}
+
+.banner-text h2:after {
+	content: " ";
+	width: 100px;
+	height: 5px;
+	background: #FFF;
+	display: block;
+	margin-top: 20px;
+	border-radius: 3px;
+}
+
+.banner-text p {
+	color: #fff;
+}
+
+/* SWIPE STYLING  */
+select {
+	background-color: #1F99CD;
+	background-position: right 10px center;
+	background-repeat: no-repeat;
+	background-size: auto 50%;
+	border-radius: 2px;
+	border: none;
+	color: white;
+	padding: 10px 30px 10px 10px;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+input .topup {
+	background-color: #1F99CD;
+	background-position: right 10px center;
+	background-repeat: no-repeat;
+	background-size: auto 50%;
+	border-radius: 2px;
+	border: none;
+	color: white;
+	padding: 10px 30px 10px 10px;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+/* End of credit styling */
+@media only screen and (max-width: 966px) {
+	.button-box {
+		text-align: center;
+		margin-top: 20px;
+	}
+	.vetbtn {
+		text-align: center;
+	}
+}
