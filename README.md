@@ -4,12 +4,12 @@ A small retail business that sells a variety of products are experiencing issues
 
 ### The Scope: 
 
-•	The system will be a web application accessed through a browser
-•	The system will store and retrieve data from an SQL database
-•	Users will be able to add, update, and delete inventory items
-•	Users will be able to view the current inventory and filter by category and search for specific items
-•	Users will be able to generate reports on inventory levels and sales data
-•	The system will not handle financial transactions or customer data
+- The system will be a web application accessed through a browser
+- The system will store and retrieve data from an SQL database
+- Users will be able to add, update, and delete inventory items
+- Users will be able to view the current inventory and filter by category and search for specific items
+- Users will be able to generate reports on inventory levels and sales data T
+- The system will not handle financial transactions or customer data
 
 ---
 
