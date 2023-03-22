@@ -182,7 +182,7 @@ public class InventoryController {
 
 		newItem.setCategory(category);
 		newItem.setItemDescription(itemDescription);
-		newItem.setQuantity(quantitySold);
+		newItem.setQuantity(quantity);
 		newItem.setQuantitySold(quantitySold);
 		newItem.setPrice(price);
 		newItem.setCost(cost);

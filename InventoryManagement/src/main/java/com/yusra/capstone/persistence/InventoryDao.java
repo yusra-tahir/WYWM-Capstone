@@ -63,7 +63,8 @@ public interface InventoryDao extends JpaRepository<Inventory, Integer> {
 
 	@Modifying
 	@Transactional
-	@Query(value = "update Inventory set category=:newcat, itemDescription=:newdesc, quantity=:newquant, quantitySold=:newsales, price=:newprice, cost=:newcost where itemId=:itemId", nativeQuery = true)
+	@Query(value = "update Inventory set category=:newcat, itemDescription=:newdesc, quantity=:newquant, quantitySold=:newsales,"
+			+ " price=:newprice, cost=:newcost where itemId=:itemId", nativeQuery = true)
 	int updateItem(@Param("itemId") int itemId, @Param("newcat") String category, @Param("newdesc") String itemDesc,
 			@Param("newquant") int quantity, @Param("newsales") int quantitySold, @Param("newprice") BigDecimal price,
 			@Param("newcost") BigDecimal cost);

@@ -17,31 +17,29 @@ import lombok.NoArgsConstructor;
  * Entity annotation tells JPA that this is an entity scan and to generate a table in the database
  */
 
+/*
+ * JPA entity requires a PK and Id defines the primary key GeneratedValue
+ * defines the way that the database auto increments
+ */
+
+/*
+ * This sets itemDescription in the database as unique to ensure same items are
+ * not being added to the database
+ */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 public class Inventory {
 
-	/*
-	 * JPA entity requires a PK and Id defines the primary key GeneratedValue
-	 * defines the way that the database auto increments
-	 */
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int itemId;
-
 	private String category;
-
-	/*
-	 * This sets itemDescription in the database as unique to ensure same items are
-	 * not being added to the database
-	 */
 
 	@Column(unique = true)
 	private String itemDescription;
-
 	private int quantity;
 	private int quantitySold;
 	private BigDecimal price;
