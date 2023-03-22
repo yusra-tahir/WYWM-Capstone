@@ -29,7 +29,7 @@ A small retail business that sells a variety of products are experiencing issues
 
 Retrieving the files from the database, we dont have to store the files locally or outsource from another website.
 
-![significant code](/code.png)!!!!!
+![significant code](/code.png)
 
 ---
 
