@@ -194,7 +194,7 @@ public class InventoryServiceImpl implements InventoryService {
 				BigDecimal price = inventory.getPrice();
 				BigDecimal cost = inventory.getCost();
 
-				BigDecimal revenuePerUnit = price.multiply(quanSold, m);
+				BigDecimal revenuePerUnit = (price.multiply(quanSold, m)).divide(quanSold, 2, RoundingMode.HALF_EVEN);
 				BigDecimal profitPerUnit = price.subtract(cost, m);
 				BigDecimal costPerUnit = cost.divide(quan, 2, RoundingMode.HALF_EVEN);
 				BigDecimal profitMarginPerUnit = ((price.subtract(cost, m)).divide(price, m)).multiply(perc,
@@ -245,7 +245,7 @@ public class InventoryServiceImpl implements InventoryService {
 				BigDecimal price = inventory.getPrice();
 				BigDecimal cost = inventory.getCost();
 
-				BigDecimal revenuePerUnit = price.multiply(quanSold, m);
+				BigDecimal revenuePerUnit = (price.multiply(quanSold, m)).divide(quanSold, 2, RoundingMode.HALF_EVEN);
 				BigDecimal profitPerUnit = price.subtract(cost, m);
 				BigDecimal costPerUnit = cost.divide(quan, 2, RoundingMode.HALF_EVEN);
 				BigDecimal profitMarginPerUnit = ((price.subtract(cost, m)).divide(price, m)).multiply(perc,
@@ -326,13 +326,12 @@ public class InventoryServiceImpl implements InventoryService {
 
 				int stockRemaining = (int) inventoryOnHand;
 
-				double weightedAverageCost = (cost * inventoryOnHand) / inventoryOnHand;
 				double percStock = (inventoryOnHand / inventory.getQuantity()) * 100;
 
 				String stockLevels = stockLevels(percStock);
 
 				InventoryReport inventoryReport = new InventoryReport(inventory, inventory.getItemDescription(),
-						inventory.getQuantity(), stockRemaining, weightedAverageCost, stockLevels);
+						inventory.getQuantity(), stockRemaining, stockLevels);
 				return inventoryReport;
 
 			}
@@ -371,7 +370,6 @@ public class InventoryServiceImpl implements InventoryService {
 
 				int stockRemaining = (int) inventoryOnHand;
 
-				double weightedAverageCost = (cost * inventoryOnHand) / inventoryOnHand;
 				double percStock = (inventoryOnHand / inventory.getQuantity()) * 100;
 
 				String stockLevels = stockLevels(percStock);
@@ -380,7 +378,6 @@ public class InventoryServiceImpl implements InventoryService {
 				inventoryReport.setProduct(inventory.getItemDescription());
 				inventoryReport.setQuant(inventory.getQuantity());
 				inventoryReport.setInventoryOnHand(stockRemaining);
-				inventoryReport.setWOCPerUnit(weightedAverageCost);
 				inventoryReport.setStockLevels(stockLevels);
 
 				inventoryReportList.add(inventoryReport);

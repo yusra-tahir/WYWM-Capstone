@@ -19,7 +19,6 @@ public class InventoryReport {
 	private String product;
 	private int quant;
 	private int inventoryOnHand;
-	private double WOCPerUnit;
 	private String stockLevels;
 
 }
